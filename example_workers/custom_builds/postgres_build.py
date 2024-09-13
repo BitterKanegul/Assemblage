@@ -10,6 +10,15 @@ logging.basicConfig(level=logging.INFO,
                     filemode='w')
 
 def install_prerequisites_hook(clone_dir):
+    #Install activestate perl
+    #    via https://docs.activestate.com/platform/state/install/
+
+    install_activeperl_cmd = "& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString('https://platform.activestate.com/dl/cli/install.ps1')))"
+    run_powershell_cmd = f'powershell.exe -Command "{install_activeperl_cmd}"'
+    install_perl_cmd = "state checkout ActiveState-Projects/ActiveState-Perl-5.36.0 . && state use ActiveState-Perl-5.36.0"
+    cmd_with_output(run_powershell_cmd, clone_dir)
+    cmd_with_output(install_perl_cmd, clone_dir)
+
 
     #Adding mingw binaries for building
     config_file = r"\src\tools\msvc\config.pl"
