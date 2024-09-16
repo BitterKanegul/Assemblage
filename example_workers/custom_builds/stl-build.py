@@ -24,8 +24,8 @@ def build_hook(build_dir,
     arch_map ={'x64': 'x64', 'x64_arm':'ARM', 'x64_arm64': 'ARM64', 'x86': 'x86'}
 
     res = cmd_with_output(f"{vcvarsall_loc} {arch} &&" +
-                          f"cmake --preset {arch} &&" +
-                          f"cmake build --preset {arch_map[arch]}", platform="windows", cwd=clone_dir, timelimit=600000)
+                          f"cmake --preset {arch_map[arch]} &&" +
+                          f"cmake --build --preset {arch_map[arch]}", platform="windows", cwd=clone_dir, timelimit=600000)
 
 
 
