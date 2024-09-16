@@ -30,7 +30,7 @@ def build_hook(build_dir,
 
 
 obj = CustomWindowsBuild(clone_dir='C:\\\\STL\\',
-                         clone_flags='',
+                         clone_flags=' --recursive',
                          collect_dir="C:\\Binaries",
                          source_dir='C:\\\\STL\\',
                          build_dir='C:\\\\STL\\',
