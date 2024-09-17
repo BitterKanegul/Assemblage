@@ -20,10 +20,11 @@ def build_hook(build_dir,
                optimization):
     logging.info("Building CPython...")
     vcvarsall_loc = "\"C:\\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvarsall.bat\""
+    arch_map ={'x64': 'x64', 'x64_arm':'ARM', 'x64_arm64': 'ARM64', 'x86': 'x86'}
 
     res = cmd_with_output(f"cd PCBuild &&" +
                           f"{vcvarsall_loc} {arch} &&" +
-                          f"build.bat -c {build_mode} -p {arch}", platform="windows", cwd=clone_dir, timelimit=600000)
+                          f"build.bat -c {build_mode} -p {arch_map[arch]}", platform="windows", cwd=clone_dir, tim  elimit=600000)
 
 
 
