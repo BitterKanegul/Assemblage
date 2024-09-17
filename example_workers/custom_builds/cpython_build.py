@@ -24,7 +24,7 @@ def build_hook(build_dir,
 
     res = cmd_with_output(f"cd PCBuild &&" +
                           f"{vcvarsall_loc} {arch} &&" +
-                          f"build.bat -c {build_mode} -p {arch_map[arch]}", platform="windows", cwd=clone_dir, tim  elimit=600000)
+                          f"build.bat -c {build_mode} -p {arch_map[arch]}", platform="windows", cwd=clone_dir, timelimit=600000)
 
 
 
