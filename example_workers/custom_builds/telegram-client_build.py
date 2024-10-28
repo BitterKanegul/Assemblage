@@ -64,11 +64,11 @@ arch = 'x64'
 
 # Create the build object
 obj = CustomWindowsBuild(
-    clone_dir='D:\\TBuild\\tdesktop',
+    clone_dir='C:\\TBuild\\tdesktop',
     clone_flags='--recursive',
-    collect_dir="D:\\TBuild\\Binaries",
-    source_dir='D:\\TBuild\\tdesktop',
-    build_dir='D:\\TBuild\\Binaries',
+    collect_dir="C:\\TBuild\\Binaries",
+    source_dir='C:\\TBuild\\tdesktop',
+    build_dir='C:\\TBuild\\Binaries',
     project_git_url='https://github.com/telegramdesktop/tdesktop.git',
     optimization='',
     build_mode='Release',
